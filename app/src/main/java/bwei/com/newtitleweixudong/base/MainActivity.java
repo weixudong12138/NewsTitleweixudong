@@ -39,7 +39,8 @@ public class MainActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    //    Log.i("wei","github首次提交作业");
+       Log.i("wei","github首次提交作业");
+
         initHeader();
          initwidget();
         initListener();
