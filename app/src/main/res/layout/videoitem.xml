@@ -6,9 +6,9 @@
     <!--android:id="@+id/text_title"-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content" />-->
-    <com.handmark.pulltorefresh.library.PullToRefreshListView
-        android:id="@+id/lv_mytitlehomefragment_pulltorefresh"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+<fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+   android:id="@+id/jc_mytitlevideofragment_jiecaovideo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard>
 
 </LinearLayout>

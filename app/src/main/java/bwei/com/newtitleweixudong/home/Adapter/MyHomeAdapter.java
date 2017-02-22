@@ -1,4 +1,4 @@
-package bwei.com.newtitleweixudong.home;
+package bwei.com.newtitleweixudong.home.Adapter;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
 
 import bwei.com.newtitleweixudong.base.MainActivity;
+import bwei.com.newtitleweixudong.home.MyTitleHomeFragment;
 
 /**
  * Created by Administrator on 2017/2/12.
@@ -17,12 +18,12 @@ import bwei.com.newtitleweixudong.base.MainActivity;
 
 public class MyHomeAdapter extends FragmentPagerAdapter{
 
-    private List<Fragment>list;
+    private List<MyTitleHomeFragment>list;
     private String[]title;
     private Context context;
 
 
-    public MyHomeAdapter(FragmentManager fm, List<Fragment> list, String[] title, Context context) {
+    public MyHomeAdapter(FragmentManager fm, List<MyTitleHomeFragment> list, String[] title, Context context) {
         super(fm);
         this.list = list;
         this.title = title;
@@ -43,4 +44,5 @@ public class MyHomeAdapter extends FragmentPagerAdapter{
     public int getCount() {
         return list.size();
     }
+
 }

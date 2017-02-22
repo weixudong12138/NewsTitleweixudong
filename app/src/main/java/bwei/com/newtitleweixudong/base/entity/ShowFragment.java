@@ -7,6 +7,6 @@ import android.support.v4.app.Fragment;
  */
 
 public class ShowFragment  {
-    public Fragment fragment;
-    public int statue;
+    public Fragment fragment11;
+    public int statue=0;
 }

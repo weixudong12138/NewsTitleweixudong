@@ -16,15 +16,27 @@
         />
 
 </LinearLayout>
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tl_fragmenthome_tablayout"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp"
-        app:tabGravity="fill"
-        app:tabSelectedTextColor="@color/colorAccent"
-        app:tabTextColor="@color/colorPrimary"
-        app:tabIndicatorColor="@null"
-       ></android.support.design.widget.TabLayout>
+        android:layout_height="46dp">
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_fragmenthome_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabGravity="fill"
+            app:tabSelectedTextColor="@color/colorAccent"
+            app:tabTextColor="@color/colorPrimary"
+            app:tabIndicatorColor="@null"
+            ></android.support.design.widget.TabLayout>
+<ImageView
+    android:id="@+id/iv_fragmenthome_add"
+    android:layout_width="46dp"
+    android:layout_height="46dp"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/attention_plus"
+    />
+    </RelativeLayout>
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_fragment_viewpager"
