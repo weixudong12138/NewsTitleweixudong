@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_phone_ligon"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="bwei.com.newtitleweixudong.my.PhoneLigon">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="         登陆后保存阅读习惯
+           打造你的专属头条"
+        android:textSize="30sp"
+        android:layout_marginTop="65dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:hint="手机号"
+        android:textSize="20sp"
+
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

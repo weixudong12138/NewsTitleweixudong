@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp">
+
+
+        <TextView
+            android:id="@+id/tabs_txt"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:background="@drawable/item_tabs_bg"
+            android:gravity="center"
+            android:text="头条"
+            android:textSize="16dp"/>
+
+        <ImageView
+            android:id="@+id/delelte"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+
+            android:layout_alignParentTop="true"
+            android:src="@drawable/add_channels_close_small"
+            android:visibility="invisible"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

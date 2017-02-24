@@ -16,7 +16,7 @@ import bwei.com.newtitleweixudong.R;
 import bwei.com.newtitleweixudong.base.MainActivity;
 import bwei.com.newtitleweixudong.video.Adapter.MyVideoAdapter;
 import bwei.com.newtitleweixudong.video.MyTitleVideoFragment;
-import fm.jiecao.jcvideoplayer_lib.JCMediaManager;
+
 
 /**
  * Created by Administrator on 2017/2/10.

@@ -46,13 +46,12 @@ public class MyApp extends Application {
 
             @Override
             public void onSuccess(String deviceToken) {
-                //注册成功会返回device token
-                //     Log.i("魏旭东",deviceToken);
+
             }
 
             @Override
             public void onFailure(String s, String s1) {
-                //  Log.i("微微",s+s1);
+
             }
         });
 
@@ -60,7 +59,7 @@ public class MyApp extends Application {
     }
     public static void asveMode(){
         SharedPreferences.Editor edit=  msharedpreferences.edit();
-        edit.putInt("mode",0);
+        edit.putInt("mode",MMODE);
         edit.commit();
     }
 

@@ -1,6 +1,7 @@
 package bwei.com.newtitleweixudong.home.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import bwei.com.newtitleweixudong.MyApp;
 import bwei.com.newtitleweixudong.R;
 import bwei.com.newtitleweixudong.home.HomeBean;
 
@@ -27,6 +29,11 @@ public class MyListHomeAdapter extends BaseAdapter {
     private Context context;
     private List<HomeBean> list = new ArrayList<>();
     private DisplayImageOptions options;
+    private int i;
+    private ViewHolder viewHolder;
+    private ViewHolder2 viewHolder2;
+    private ViewHolder3 viewHolder3;
+    private ViewHolder4 viewHolder4;
 
     public MyListHomeAdapter(Context context) {
         this.context = context;
@@ -74,10 +81,18 @@ public class MyListHomeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder viewHolder = null;
-        ViewHolder2 viewHolder2 = null;
-        ViewHolder3 viewHolder3 = null;
-        ViewHolder4 viewHolder4 = null;
+        SharedPreferences conflag = context.getSharedPreferences("conflag", Context.MODE_PRIVATE);
+        i = conflag.getInt("mode",0);
+        if (i==1){
+            MyApp.stitchMode(1);
+        }else {
+          MyApp.stitchMode(0);
+        }
+
+        viewHolder = null;
+        viewHolder2 = null;
+        viewHolder3 = null;
+        viewHolder4 = null;
         int type = getItemViewType(position);
         if (convertView == null) {
             switch (type) {
@@ -179,6 +194,11 @@ public class MyListHomeAdapter extends BaseAdapter {
     static class ViewHolder4 {
         TextView threetext;
         ImageView threeimage1, threeimage2,threeimage3;
+
+    }
+    public void switchmode(){
+
+
 
     }
 

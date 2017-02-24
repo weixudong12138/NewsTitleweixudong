@@ -1,5 +1,6 @@
 package bwei.com.newtitleweixudong.base.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +20,7 @@ import bwei.com.newtitleweixudong.R;
 import bwei.com.newtitleweixudong.base.MainActivity;
 import bwei.com.newtitleweixudong.home.Adapter.MyHomeAdapter;
 import bwei.com.newtitleweixudong.home.MyTitleHomeFragment;
+import bwei.com.newtitleweixudong.home.itemactivity.Main2Activity;
 
 /**
  * Created by Administrator on 2017/2/10.
@@ -30,6 +34,8 @@ public class Fragmenthome extends BaseFragment {
     private List<MyTitleHomeFragment> list;
     private MainActivity mainActivity;
     private View view;
+    private Button btn_fragmenthome_title;
+    private ImageView iv_fragmenthome_add;
 
 
     @Nullable
@@ -55,6 +61,8 @@ public class Fragmenthome extends BaseFragment {
 
     @Override
     public void initwidget() {
+        btn_fragmenthome_title = (Button) view.findViewById(R.id.btn_fragmenthome_title);
+        iv_fragmenthome_add = (ImageView) view.findViewById(R.id.iv_fragmenthome_add);
 
         mtablayout = (TabLayout) view.findViewById(R.id.tl_fragmenthome_tablayout);
         mviewpager = (ViewPager) view.findViewById(R.id.vp_fragment_viewpager);
@@ -70,6 +78,8 @@ public class Fragmenthome extends BaseFragment {
 
     @Override
     public void initListener() {
+        btn_fragmenthome_title.setOnClickListener(this);
+        iv_fragmenthome_add.setOnClickListener(this);
 
     }
 
@@ -79,9 +89,6 @@ public class Fragmenthome extends BaseFragment {
             MyTitleHomeFragment mytitlehomefragment = new MyTitleHomeFragment();
 
 
-//            Bundle b=new Bundle();
-//            b.putInt("flag",i);
-//            mytitlehomefragment.setArguments(b);
 
             Bundle b = new Bundle();
             b.putString("titlee", titlee[i]);
@@ -98,29 +105,25 @@ public class Fragmenthome extends BaseFragment {
         mtablayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         mtablayout.setupWithViewPager(mviewpager);
         mviewpager.setAdapter(myhomeAdapter);
-        //mviewpager.setOffscreenPageLimit(3);
 
-//        mviewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int position) {
-//                Log.e("myMessage","onPageSelected "+position);
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int state) {
-//
-//            }
-//        });
     }
 
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.iv_fragmenthome_add:
+                Intent intent=new Intent(mainActivity, Main2Activity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.btn_fragmenthome_title:
+
+
+                break;
+
+        }
+
 
     }
 

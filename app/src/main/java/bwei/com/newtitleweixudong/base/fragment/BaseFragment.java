@@ -16,4 +16,5 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public abstract void initHeader();//初始化头部
 
     public abstract void initListener();//初始化监听
+
 }

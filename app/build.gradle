@@ -29,11 +29,11 @@ dependencies {
     compile files('libs/universal-image-loader-1.9.5.jar')
     compile files('libs/volley.jar')
     compile 'com.android.support:recyclerview-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:design:25.1.1'
     compile project(':library')
     compile 'com.google.code.gson:gson:2.8.0'
     compile 'org.xutils:xutils:3.3.40'
-    compile 'fm.jiecao:jiecaovideoplayer:5.5'
+    compile 'fm.jiecao:jiecaovideoplayer:2.0'
     compile project(':PushSDK')
     compile files('libs/mta-sdk-1.6.2.jar')
     compile files('libs/open_sdk_r5778.jar')

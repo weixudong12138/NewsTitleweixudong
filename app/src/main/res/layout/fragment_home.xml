@@ -16,13 +16,15 @@
         />
 
 </LinearLayout>
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="46dp">
+        android:layout_height="46dp"
+        android:orientation="horizontal"
+        >
         <android.support.design.widget.TabLayout
             android:id="@+id/tl_fragmenthome_tablayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="330dp"
+            android:layout_height="46dp"
             app:tabGravity="fill"
             app:tabSelectedTextColor="@color/colorAccent"
             app:tabTextColor="@color/colorPrimary"
@@ -31,11 +33,11 @@
 <ImageView
     android:id="@+id/iv_fragmenthome_add"
     android:layout_width="46dp"
-    android:layout_height="46dp"
+    android:layout_height="match_parent"
     android:layout_alignParentRight="true"
-    android:src="@drawable/attention_plus"
+    android:src="@mipmap/add_channel_titlbar_new"
     />
-    </RelativeLayout>
+    </LinearLayout>
 
 
     <android.support.v4.view.ViewPager

@@ -15,16 +15,16 @@ import java.util.List;
 import bwei.com.newtitleweixudong.R;
 import bwei.com.newtitleweixudong.video.VideoBean;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 /**
  * Created by Administrator on 2017/2/20.
  */
 
 public class MyVideolistAdapter extends BaseAdapter {
-    private Context context;
- private List<VideoBean>list=new ArrayList<>();
-    private final DisplayImageOptions options;
+     Context context;
+  List<VideoBean>list=new ArrayList<>();
+     final DisplayImageOptions options;
     public MyVideolistAdapter(Context context) {
         this.context = context;
 
@@ -62,19 +62,19 @@ public class MyVideolistAdapter extends BaseAdapter {
      if (convertView==null){
          viewHolder=new ViewHolder();
          convertView= View.inflate(context, R.layout.videoitem,null);
-       viewHolder.jc_mytitlevideofragment_jiecaovideo= (JCVideoPlayerStandard) convertView.findViewById(R.id.jc_mytitlevideofragment_jiecaovideo);
+       viewHolder.jc_mytitlevideofragment_jiecaovideo= (JCVideoPlayer) convertView.findViewById(R.id.jc_mytitlevideofragment_jiecaovideo);
          convertView.setTag(viewHolder);
      }else {
 
         viewHolder= (ViewHolder) convertView.getTag();
      }
-viewHolder.jc_mytitlevideofragment_jiecaovideo.setUp(list.get(position).getMp4_url(), JCVideoPlayer.SCREEN_LAYOUT_LIST,list.get(position).getTitle());
-        ImageLoader.getInstance().displayImage(list.get(position).getCover(),viewHolder.jc_mytitlevideofragment_jiecaovideo.thumbImageView,options);
+viewHolder.jc_mytitlevideofragment_jiecaovideo.setUp(list.get(position).getMp4_url(),list.get(position).getTitle());
+        ImageLoader.getInstance().displayImage(list.get(position).getCover(),viewHolder.jc_mytitlevideofragment_jiecaovideo.ivThumb,options);
 
         return convertView;
     }
     static class ViewHolder{
-        JCVideoPlayerStandard jc_mytitlevideofragment_jiecaovideo;
+        JCVideoPlayer jc_mytitlevideofragment_jiecaovideo;
 
     }
 

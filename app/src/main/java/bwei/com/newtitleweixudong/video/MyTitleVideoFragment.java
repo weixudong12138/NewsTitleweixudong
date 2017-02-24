@@ -18,31 +18,31 @@ import bwei.com.newtitleweixudong.base.fragment.BaseFragment;
 import bwei.com.newtitleweixudong.base.network.NetUrl;
 import bwei.com.newtitleweixudong.base.network.XutilNet;
 import bwei.com.newtitleweixudong.video.Adapter.MyVideolistAdapter;
-import fm.jiecao.jcvideoplayer_lib.JCMediaManager;
+
 
 /**
  * Created by Administrator on 2017/2/19.
  */
 
 public class MyTitleVideoFragment extends BaseFragment implements PullToRefreshBase.OnRefreshListener2,XutilNet.CallbackData<VideoBean>{
-int page=10;
+    int page=10;
     private String url;
     private MainActivity mainactivity;
     private PullToRefreshListView lv_mytitlevideofragment_pulltorefresh;
     private MyVideolistAdapter myVideolistAdapter;
-boolean isneadclear=false;
+    boolean isneadclear=false;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.mytitlevideofragment,null);
+        return inflater.inflate(R.layout.mytitlevideofragment,null,false);
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mainactivity = (MainActivity) getActivity();
-     String type=   getArguments().getString("titlevideourl");
-      url=  NetUrl.getvideourl(type,page);
+        String type=   getArguments().getString("titlevideourl");
+        url=  NetUrl.getvideourl(type,page);
         initwidget();
         initHeader();
         initListener();
@@ -98,14 +98,5 @@ lv_mytitlevideofragment_pulltorefresh.setOnRefreshListener(this);
         myVideolistAdapter.notifyDataSetChanged();
         lv_mytitlevideofragment_pulltorefresh.onRefreshComplete();
     }
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (hidden){
-            JCMediaManager.instance().mediaPlayer.pause();
 
-        }
-        JCMediaManager.instance().mediaPlayer.start();
-
-    }
 }

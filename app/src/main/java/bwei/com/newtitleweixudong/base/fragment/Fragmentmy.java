@@ -1,5 +1,6 @@
 package bwei.com.newtitleweixudong.base.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
@@ -20,14 +21,19 @@ import org.json.JSONObject;
 import bwei.com.newtitleweixudong.MyApp;
 import bwei.com.newtitleweixudong.R;
 import bwei.com.newtitleweixudong.base.MainActivity;
+import bwei.com.newtitleweixudong.my.PhoneLigon;
 
 /**
  * Created by Administrator on 2017/2/10.
  */
 
 public class Fragmentmy extends BaseFragment{
+
+    //qq第三方登录的属性
     private Tencent mtencent;
-int a=0;
+    public static  String mAppid="1105924500";
+
+    int a=0;
     private MainActivity mainActivity;
     private ImageView iv_fragmentmy_wechat;
     private ImageView iv_fragmentmy_qq;
@@ -42,7 +48,7 @@ int a=0;
     private LinearLayout ll_fragmentmy_downll;
     private TextView tv1;
     private TextView tv2;
-    private TextView tv3;
+  //  private TextView tv3;
     private TextView tv4;
     private TextView tv5;
     private TextView tv6;
@@ -58,6 +64,9 @@ int a=0;
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        //创建授权对象
+        mtencent=Tencent.createInstance(mAppid,getActivity());
+
         mainActivity = (MainActivity) getActivity();
          initwidget();
         initHeader();
@@ -81,7 +90,7 @@ int a=0;
 
         tv1 = (TextView) view.findViewById(R.id.tv1);
         tv2 = (TextView) view.findViewById(R.id.tv2);
-        tv3 = (TextView) view.findViewById(R.id.tv3);
+      //  tv3 = (TextView) view.findViewById(R.id.tv3);
         tv4 = (TextView) view.findViewById(R.id.tv4);
         tv5 = (TextView) view.findViewById(R.id.tv5);
         tv6 = (TextView) view.findViewById(R.id.tv6);
@@ -111,9 +120,12 @@ int a=0;
 
                 break;
             case R.id.iv_fragmentmy_qq:
+//                执行qq第三方登录
                 mtencent.login(getActivity(),"all",loginListener);
                 break;
             case R.id.iv_fragmentmy_phone:
+                Intent intent=new Intent(mainActivity, PhoneLigon.class);
+                startActivity(intent);
 
                 break;
             case R.id.iv_fragmentmy_more:
@@ -123,17 +135,22 @@ int a=0;
 
                 break;
             case R.id.tv_fragmentmy_daynight:
-
+               //日夜间模式
                 if(a==0){
                     tv_fragmentmy_daynight.setSelected(true);
+
                     MyApp.stitchMode(1);
+                    MyApp.MMODE= MyApp.MODE_NIGHT;
+                    MyApp.asveMode();
 
                     tv_fragmentmy_daynight.setText("日间");
                     a=1;
                 }else {
                     tv_fragmentmy_daynight.setSelected(false);
-                    MyApp.stitchMode(0);
 
+                    MyApp.stitchMode(0);
+                    MyApp.MMODE= MyApp.MODE_DAY;
+                    MyApp.asveMode();
                     tv_fragmentmy_daynight.setText("夜间");
                     a=0;
 
@@ -151,7 +168,7 @@ int a=0;
     }
 
     public void  switchmode() {
-ll_fragmentmy_topll.setBackgroundColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
+       //ll_fragmentmy_topll.setBackgroundColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
         ll_fragmentmy_zhongll.setBackgroundColor(getResources().getColor(MyApp.mResourceMap.get("backcolor")));
         ll_fragmentmy_downll.setBackgroundColor(getResources().getColor(MyApp.mResourceMap.get("backcolor")));
 
@@ -161,7 +178,7 @@ ll_fragmentmy_topll.setBackgroundColor(getResources().getColor(MyApp.mResourceMa
 
    tv1.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
         tv2.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
-        tv3.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
+     //   tv3.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
         tv4.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
         tv5.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
         tv6.setTextColor(getResources().getColor(MyApp.mResourceMap.get("textcolor")));
